@@ -1,6 +1,11 @@
+body {
+    font-family: 'MedievalSharp', cursive;
+    color: aliceblue;
+}
+
 .container {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
 }
 
 .list {
@@ -21,4 +26,13 @@
 
 .no-result {
 	display:none;
+}
+
+#pixiCanvas{
+    position:absolute;
+}
+
+.img-6vh {
+    width: 6vh !important;
+    height: 6vh !important;
 }
