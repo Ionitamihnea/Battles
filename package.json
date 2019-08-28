@@ -1,0 +1,19 @@
+{
+  "name": "battles",
+  "version": "1.0.0",
+  "description": "A view consisting of a list of battles",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ionitamihnea/Battles.git"
+  },
+  "author": "Mihnea Ionita",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ionitamihnea/Battles/issues"
+  },
+  "homepage": "https://github.com/Ionitamihnea/Battles#readme"
+}
