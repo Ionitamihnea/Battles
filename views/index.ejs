@@ -1,5 +1,17 @@
 <% include partials/header %>
-
-Hi!
-
+    <ol>
+        <% battleKeys.forEach(function(battle){ %>
+            <% const invader = battles[battle].inv.id %>
+            <% const defender = battles[battle].def.id %>
+            <ul>
+                <li>
+                    Invader: <%= countries[invader].name %>
+                </li>
+                <li>
+                    Defender: <%= countries[defender].name %>
+                </li>
+                <br>
+            </ul>
+        <% }); %>
+    </ol>
 <% include partials/footer %>

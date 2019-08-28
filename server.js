@@ -17,7 +17,22 @@ app.engine('html', ejs.__express);
 
 // Index page
 app.get('/', (req, res) => {
-    return res.render('index');
+    var options = { 
+        method: 'GET',
+        url: `https://www.erepublik.com/en/military/campaigns-new`,
+      };
+      request(options, function (error, response, body) {
+        if(!error && response.statusCode == 200) {
+          const data = JSON.parse(body);
+          return res.render('index', { 
+              battleKeys: Object.keys(data.battles),
+              battles: data.battles,
+              countries: data.countries 
+            });
+        } else {
+            res.send('Error GET request.')
+        }
+      });
 });
 
 // Error page
