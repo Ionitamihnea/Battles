@@ -1,17 +1,47 @@
 <% include partials/header %>
-    <ol>
-        <% battleKeys.forEach(function(battle){ %>
-            <% const invader = battles[battle].inv.id %>
-            <% const defender = battles[battle].def.id %>
-            <ul>
-                <li>
-                    Invader: <%= countries[invader].name %>
-                </li>
-                <li>
-                    Defender: <%= countries[defender].name %>
-                </li>
-                <br>
-            </ul>
-        <% }); %>
-    </ol>
+<div class="container">
+	<div class="row">
+		<div id="battles-list" class="col-xs-12">
+			<div class="filter-group row">
+				<div class="form-group col-xs-12 col-sm-12 col-md-4">
+					<input type="text" id="searchBar" class="search form-control" placeholder="Search" onkeydown="updateList()" />
+				</div>
+				<div class="form-group col-xs-12 col-sm-12 col-md-4">
+					<div class="radio-inline">
+						<label>
+							<input class="filter-all" type="radio" value="all" name="combatant" id="combatant-all" checked /> All
+						</label>
+					</div>
+					<div class="radio-inline">
+						<label>
+							<input class="filter" type="radio" value="invader" name="combatant" id="combatant-invader" /> Invader
+						</label>
+					</div>
+					<div class="radio-inline">
+						<label>
+							<input class="filter" type="radio" value="defender" name="combatant" id="combatant-defender" /> Defender
+						</label>
+                    </div>
+                    <button class="btn btn-danger" onclick="resetList();">Clear filters</button>
+				</div>
+				<div class="form-group col-xs-12 col-sm-12">
+					
+				</div>
+			</div>
+			<ul class="list">
+                <% battleKeys.forEach(function(battle){ %>
+                    <% const invader = battles[battle].inv.id %>
+                    <% const defender = battles[battle].def.id %>
+                        <li>
+                            <h3 class="invaderName col-lg-5">Invader <%= countries[invader].name %></h3>
+                            <h3 class="col-lg-2">X</h3>
+                            <h3 class="defenderName col-lg-5">Defender <%= countries[defender].name %></h3>
+                        </li>
+                <% }); %>
+			</ul>
+			<div class="no-result">No Results</div>
+			<ul class="pagination"></ul>
+		</div>
+	</div>
+</div>
 <% include partials/footer %>
