@@ -1,6 +1,16 @@
-body {
+html, body {
     font-family: 'MedievalSharp', cursive;
     color: aliceblue;
+    margin:0; /* remove default margin */
+    padding:0; /* remove default padding */
+    width:100%; /* take full browser width */
+    height:100%; /* take full browser height*/
+}
+
+@media only screen and (max-width: 767px) {
+  html, body, .jumbotron {
+    background-color: #333;
+  }
 }
 
 .container {
@@ -35,4 +45,18 @@ body {
 .img-6vh {
     width: 6vh !important;
     height: 6vh !important;
+}
+
+.img-20vh {
+  width: 20vh !important;
+  height: 20vh !important;
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+  background-color: #f0ad4e !important;
+  border-color: #eea236 !important;
+}
+
+.pagination>li>a, .pagination>li>span {
+  color: #f0ad4e;
 }

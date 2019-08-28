@@ -1,5 +1,5 @@
 <% include partials/header %>
-<div id="pixiCanvas"></div>
+<div id="pixiCanvas" class="hidden-xs"></div>
 <div class="jumbotron">
     <div class="container">
         <div class="row">
@@ -26,16 +26,13 @@
                         </div>
                         <button class="btn btn-warning" onclick="resetList();">Clear filters</button>
                     </div>
-                    <div class="form-group col-xs-12 col-sm-12">
-                        
-                    </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-6">
-                        <h1 class="text-center">Attackers</h1>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <h2 class="text-center">Attackers</h1>
                     </div>
-                    <div class="col-lg-6">
-                        <h1 class="text-center">Defenders</h1>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <h2 class="text-center">Defenders</h1>
                     </div>
                 </div>
                 <ul class="list">
@@ -44,28 +41,35 @@
                         <% const defender = battles[battle].def.id %>
                         <div class="row">
                             <li>
-                                <div class="col-lg-1">
+                                <div class="col-lg-1 hidden-md hidden-sm hidden-xs">
                                     <img src="/dist/img/sword.png" class="img-rounded img-responsive img-6vh">
                                 </div>
-                                <h2 class="invaderName col-lg-4 text-left">
+                                <h3 class="invaderName col-xs-6 col-sm-5 col-lg-4 col-md-5 text-left">
                                     <%= countries[invader].name %>
-                                </h2>
-                                <div class="col-lg-2">
+                                </h3>
+                                <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
                                     <img src="/dist/img/swords.png" class="img-rounded img-responsive img-6vh center-block">
                                 </div>
-                                <h2 class="defenderName col-lg-4 text-right">
+                                <h3 class="defenderName col-xs-6 col-sm-5 col-lg-4 col-md-5 text-right">
                                     <%= countries[defender].name %>
-                                </h2>
-                                <div class="col-lg-1">
+                                </h3>
+                                <div class="col-lg-1 hidden-md hidden-sm hidden-xs">
                                     <img src="/dist/img/shield.png" class="img-rounded img-responsive img-6vh">
                                 </div>
                             </li>
                         </div>
                     <% }); %>
                 </ul>
-                <div class="no-result">No Results</div>
+                <div class="no-result">
+                    <div class="row col-lg-12 hidden-xs">
+                        <img src="/dist/img/helmet.png" class="img-rounded img-responsive img-20vh center-block">
+                    </div>
+                    <div class="row">
+                        <h1 class="col-lg-12 text-center">No results</h1>
+                    </div>
+                </div>
                 <div class="text-center">
-                    <ul class="pagination"></ul>
+                    <ul class="pagination pagination-lg"></ul>
                 </div>
             </div>
         </div>
